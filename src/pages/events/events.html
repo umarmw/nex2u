@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Nex2U</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card *ngFor="let event of events">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{event.icon}}">
+      </ion-avatar>
+      <h2>{{event.category}}</h2>
+      <p>{{event.time}}</p>
+    </ion-item>
+    <img src="{{event.image}}">
+    <ion-card-content>
+      <ion-card-title (click)="eventTapped($event, event)">
+        {{event.title}}
+      </ion-card-title>
+      <p>{{event.description}}</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{event.total.up}}</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="thumbs-down"></ion-icon>
+          <div>{{event.total.down}}</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>{{event.total.comment}}</div>
+        </button>
+      </ion-col>
+      <ion-col>
+          <button ion-button icon-start clear small>
+            <ion-icon ios="ios-share" md="md-share"></ion-icon>
+            <div>Share</div>
+          </button>
+        </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+</ion-content>

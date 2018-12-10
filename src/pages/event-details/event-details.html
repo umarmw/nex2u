@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Event Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-card *ngIf="selectedItem">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{selectedItem.icon}}">
+        </ion-avatar>
+        <h2>{{selectedItem.category}}</h2>
+        <p>{{selectedItem.time}}</p>
+      </ion-item>
+      <img src="{{selectedItem.image}}">
+      <ion-card-content>
+        <ion-card-title>
+          {{selectedItem.title}}
+        </ion-card-title>
+        <p>{{selectedItem.description}}</p>
+      </ion-card-content>
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-start clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>{{selectedItem.total.up}}</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-start clear small>
+            <ion-icon name="thumbs-down"></ion-icon>
+            <div>{{selectedItem.total.down}}</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-start clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>{{selectedItem.total.comment}}</div>
+          </button>
+        </ion-col>
+        <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon ios="ios-share" md="md-share"></ion-icon>
+              <div>Share</div>
+            </button>
+          </ion-col>
+      </ion-row>
+  
+    </ion-card>
+  
+  </ion-content>

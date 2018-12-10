@@ -8,8 +8,14 @@
 
   <ion-content>
     <ion-list>
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+      <button ion-item (click)="openComponent(login)">
+        Login/Register
+      </button>
+      <button ion-item (click)="openComponent(profile)">
+        MyName
+      </button>
+      <button ion-item *ngFor="let p of categories" (click)="openPage(p)">
+        {{p.name}}
       </button>
     </ion-list>
   </ion-content>
